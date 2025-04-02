@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active")
     }
   })
-
   // Load listings if on listings page
   if (currentPage === "listings.html" || currentPage === "listings") {
     loadListings()
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Submit form via AJAX
       const formData = new FormData(contactForm)
-
       fetch("php/contact.php", {
         method: "POST",
         body: formData,
@@ -119,9 +117,10 @@ function loadListings(sortBy = "newest") {
 
 // Function to book a property
 function bookProperty(propertyId) {
-  alert(`You're about to book property #${propertyId}. This feature is coming soon!`)
-  // In a real application, this would redirect to a booking page or open a modal
+  console.log("Redirecting to contact page...");  // Debugging log
+  window.location.href = `contact.html?property_id=${propertyId}`;
 }
+
 
 // Email validation helper function
 function isValidEmail(email) {

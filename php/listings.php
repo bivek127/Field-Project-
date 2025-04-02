@@ -19,7 +19,7 @@ switch ($sort) {
     case 'newest':
     default:
         $orderBy = "ORDER BY created_at DESC";
-        break;
+        break; 
 }
 
 // Query to get all listings
@@ -28,7 +28,6 @@ $result = $conn->query($sql);
 
 if ($result) {
     $listings = [];
-    
     // Fetch all listings
     while ($row = $result->fetch_assoc()) {
         $listings[] = [
